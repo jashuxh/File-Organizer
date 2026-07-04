@@ -41,6 +41,10 @@ for file in files:
             os.mkdir("Archives")
         os.rename(file , os.path.join("Archives", file))
 
+    elif extension in extension_mapping.no_extention:
+        if os.path.isdir("No extention") == False:
+            os.mkdir("No extention")
+        os.rename(file, os.path.join("No extention", file))
     else:
         if os.path.isdir("Others") == False:
             os.mkdir("Others")

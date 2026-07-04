@@ -24,3 +24,5 @@ archive = [
     ".zip", ".tar", ".7z",
     ".rar", ".cab", ".archive"
 ]
+
+no_extention = ''
