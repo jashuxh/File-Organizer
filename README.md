@@ -111,7 +111,6 @@ The program will organize the files into their respective folders.
 ## 📌 Future Improvements
 
 - Add logging.
-- Handle duplicate file names.
 - Add a graphical user interface (GUI).
 - Add recursive folder organization.
 - Organize files by date.
