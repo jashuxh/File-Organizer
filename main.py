@@ -32,6 +32,9 @@ files = os.listdir()
 print("Processing...")
 time.sleep(3)
 for file in files:
+    
+    if file.startswith("."):
+        continue
     if os.path.isdir(file):
         continue
     name, extension = os.path.splitext(file)
