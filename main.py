@@ -6,13 +6,25 @@ import hashlib
 user_path = input("Enter path to the Directory:")
 os.chdir(user_path)
 files = os.listdir()
-user_choice = input("Want to check duplicate files?: (y/n)")
+user_input = input("Want to check duplicate files?: (y/n)")
 
+if user_input.lower() == "y":
+    warning = input("NOTE:-\nThe duplicate files will be transferred to a new folder named 'Duplicate files'\nWant to continue (y/n)")
 
-if user_choice.lower() == "y":
+def is_hidden(file):
+    if os.name == "nt":      
+        return os.stat(file).st_file_attributes & 2
+    else:                    
+        return file.startswith(".")
+
+if warning.lower() == "y":
     hashes = {}
     
     for file in files:
+        
+        if is_hidden(file):
+            continue
+
         if os.path.isdir(file):
             continue
 
@@ -32,8 +44,8 @@ files = os.listdir()
 print("Processing...")
 time.sleep(3)
 for file in files:
-    
-    if file.startswith("."):
+
+    if is_hidden(file):
         continue
     if os.path.isdir(file):
         continue
@@ -77,7 +89,7 @@ for file in files:
 print()    
 print("Process Done")
 print("Please Check the organized folder in the same path You Entered")
-if user_choice.lower() == "y":
+if warning.lower() == "y":
     print()
     print("And your duplicate file is transferred differently in a folder.")
 
