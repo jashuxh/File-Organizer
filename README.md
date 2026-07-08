@@ -116,6 +116,12 @@ The program will organize the files into their respective folders.
 - Organize files by date.
 - Custom extension mapping using a configuration file.
 
+## 🦾 Feature Improved
+
+- Handles files with no extension.
+- Handels Duplicate files.
+- Ignore hidden files.
+
 ## 👨‍💻 Author
 
 **Jashwant Sanidhi**
