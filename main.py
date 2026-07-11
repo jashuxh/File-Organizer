@@ -16,8 +16,9 @@ def is_hidden(file):
         return os.stat(file).st_file_attributes & 2
     else:                    
         return file.startswith(".")
-
+dup_count = 0
 if warning.lower() == "y":
+    
     hashes = {}
     
     for file in files:
@@ -39,11 +40,13 @@ if warning.lower() == "y":
         
         else:
             hashes[file_hash] = file
-
+        dup_count += 1
 files = os.listdir()
 print("Processing...")
 time.sleep(3)
+count = 0
 for file in files:
+    
 
     if is_hidden(file):
         continue
@@ -85,11 +88,14 @@ for file in files:
         if os.path.isdir("Others") == False:
             os.mkdir("Others")
         os.rename(file, os.path.join("Others",file))    
-
+    count += 1
 print()    
 print("Process Done")
 print("Please Check the organized folder in the same path You Entered")
+print()
+print("Total files Sorted:", count)
 if warning.lower() == "y":
     print()
     print("And your duplicate file is transferred differently in a folder.")
-
+    print()
+    print("Total file Sorted:", count," + ", "(Duplicate files)")
