@@ -16,7 +16,7 @@ def is_hidden(file):
         return os.stat(file).st_file_attributes & 2
     else:                    
         return file.startswith(".")
-dup_count = 0
+dup_count = 1
 if warning.lower() == "y":
     
     hashes = {}
@@ -37,14 +37,14 @@ if warning.lower() == "y":
             if os.path.isdir("Duplicate files") == False:
                 os.mkdir("Duplicate files")
             os.rename(file, os.path.join("Duplicate files", file))
-        
+            dup_count += 1
         else:
             hashes[file_hash] = file
-        dup_count += 1
+        
 files = os.listdir()
 print("Processing...")
 time.sleep(3)
-count = 0
+count = 1
 for file in files:
     
 
