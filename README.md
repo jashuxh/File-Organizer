@@ -110,7 +110,6 @@ The program will organize the files into their respective folders.
 
 ## 📌 Future Improvements
 
-- Add logging.
 - Add a graphical user interface (GUI).
 - Add recursive folder organization.
 - Organize files by date.
@@ -121,7 +120,7 @@ The program will organize the files into their respective folders.
 - Handles files with no extension.
 - Handels Duplicate files.
 - Ignore hidden files.
-
+- Added Logging file.
 ## 👨‍💻 Author
 
 **Jashwant Sanidhi**
