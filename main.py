@@ -122,6 +122,8 @@ for file in files:
 
 if warning.lower() == "y":
     print()
+    print("Process Done")
+    print("Please Check the organized folder in the same path You Entered")
     print("And your duplicate file is transferred differently in a folder.")
     print()
     print(f"Total file Sorted: {count} + {dup_count}(Duplicate files)")
