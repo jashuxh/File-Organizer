@@ -4,6 +4,7 @@ import extension_mapping
 import hashlib
 import logger
 
+#TAKES PATH AND PREFERENCE FROM THE USERE:
 user_path = input("Enter path to the Directory:")
 os.chdir(user_path)
 files = os.listdir()
@@ -18,7 +19,8 @@ def is_hidden(file):
     else:                    
         return file.startswith(".")
 dup_count = 0
-if warning.lower() == "y":
+
+if warning.lower() == "y":  #SCANING OF THE DUPLICATE FILES | IT USES "extension_mapping.py" & "logger.py" FILE:
     
     hashes = {}
     
@@ -44,14 +46,14 @@ if warning.lower() == "y":
             dup_count += 1
         else:
             hashes[file_hash] = file
-        
+ 
 files = os.listdir()
 print("Processing...")
 time.sleep(3)
 count = 0
-for file in files:
-    
 
+for file in files:  #SCANING OF THE NON-DUPLICATE FILES | IT USES "extension_mapping" & "logger.py" FILE:
+    
     if is_hidden(file):
         continue
     if os.path.isdir(file):
@@ -120,6 +122,7 @@ for file in files:
         logger.save_file(file,oldpath, newpath)    
     count += 1
 
+## OUTRO MESSEGE:
 if warning.lower() == "y":
     print()
     print("And your duplicate file is transferred differently in a folder.")
