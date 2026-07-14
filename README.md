@@ -110,7 +110,6 @@ The program will organize the files into their respective folders.
 
 ## 📌 Future Improvements
 
-- Add a graphical user interface (GUI).
 - Add recursive folder organization.
 - Organize files by date.
 - Custom extension mapping using a configuration file.
