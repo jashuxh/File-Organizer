@@ -1,4 +1,5 @@
 import os
+import extension_mapping
 
 def restore(file_name):
     with open("organizer.log", "r") as f:
@@ -38,7 +39,6 @@ def restore_all():
             new_path = paths[1].strip()
 
             if os.path.exists(new_path):
-            
                 os.rename(new_path,old_path)
                 restored += 1
     
