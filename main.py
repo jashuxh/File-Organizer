@@ -129,16 +129,24 @@ if user_input == "1" or user_input == "2":
             logger.save_file(file,oldpath, newpath)    
         count += 1
 if user_input == "3":
-    print("Enter the file name to restore it to the old path:")
-    file_name = input(">")
-    restore_point.restore(file_name)
+    restore_input1 = str(input("1-Restore only one file?\n2-Restore all.\n(1/2?)"))
     
+    if restore_input1 == "1":
+
+        print("Enter the file name to restore it to the old path:")
+        file_name = input(">")
+        restore_point.restore(file_name)
+    elif restore_input1 == "2":
+        restore_point.restore_all() 
+
 ## OUTRO MESSEGE:
 if user_input == "2":
     print()
     print("And your duplicate file is transferred differently in a folder.")
     print()
     print(f"Total file Sorted: {count} + {dup_count}(Duplicate files)")
+elif user_input == "3":
+    print("Thank you for choosing us.   ")
 else:
     print()    
     print("Process Done")
