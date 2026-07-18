@@ -120,6 +120,7 @@ The program will organize the files into their respective folders.
 - Handels Duplicate files.
 - Ignore hidden files.
 - Added Logging file.
+- Added restore feature.
 ## 👨‍💻 Author
 
 **Jashwant Sanidhi**
